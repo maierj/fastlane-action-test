@@ -20,10 +20,5 @@ platform :ios do
   lane :beta do
     # add actions here: https://docs.fastlane.tools/actions
     puts "Performing beta distribution using fastlane"
-
-    build_app(
-      xcargs: "-allowProvisioningUpdates",
-      export_xcargs: "-allowProvisioningUpdates"
-    )
   end
 end
