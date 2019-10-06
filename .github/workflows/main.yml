@@ -8,6 +8,4 @@ jobs:
     - name: Hello world action step
       uses: maierj/actions/github-fastlane-action@master
       with:
-      	lane: 'beta'
-
-
+        lane: 'beta'
