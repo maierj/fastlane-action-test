@@ -5,7 +5,8 @@ jobs:
     runs-on: macOS-latest
     name: A job to test the GitHub fastlane action
     steps:
-    - name: Hello world action step
+    - uses: actions/checkout@v1
+    - name: Fastlane step
       uses: maierj/fastlane-action/github-fastlane-action@master
       with:
         lane: 'beta'
