@@ -6,7 +6,11 @@ jobs:
     name: A job to test the GitHub fastlane action
     steps:
     - uses: actions/checkout@v1
-    - name: Fastlane step
+    - name: Fastlane step (root directory)
+      uses: maierj/fastlane-action@master
+      with:
+        lane: 'beta'
+    - name: Fastlane step (subdirectory)
       uses: maierj/fastlane-action@master
       with:
         lane: 'beta'
