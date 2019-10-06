@@ -7,6 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Fastlane step
-      uses: maierj/fastlane-action/github-fastlane-action@master
+      uses: maierj/fastlane-action@master
       with:
         lane: 'beta'
