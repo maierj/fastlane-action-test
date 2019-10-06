@@ -20,7 +20,7 @@ platform :ios do
   lane :beta do
     # add actions here: https://docs.fastlane.tools/actions
     puts "Performing beta distribution using fastlane"
-
+    enable_automatic_code_signing
     build_ios_app(
       export_xcargs: "-allowProvisioningUpdates"
     )
