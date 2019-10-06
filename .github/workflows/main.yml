@@ -6,6 +6,6 @@ jobs:
     name: A job to test the GitHub fastlane action
     steps:
     - name: Hello world action step
-      uses: maierj/actions/github-fastlane-action@master
+      uses: maierj/fastlane-action/github-fastlane-action@master
       with:
         lane: 'beta'
