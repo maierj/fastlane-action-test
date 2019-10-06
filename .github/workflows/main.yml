@@ -3,7 +3,7 @@ on: [push]
 jobs:
   test_job:
     runs-on: macOS-latest
-    name: A job to test the GitHub fastlane action
+    name: A job to test the GitHub fastlane action.
     steps:
     - uses: actions/checkout@v1
     - name: Fastlane step
