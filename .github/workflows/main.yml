@@ -7,6 +7,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Fastlane step
-      uses: maierj/fastlane-action@v0.9.1
+      uses: maierj/fastlane-action@master
       with:
         lane: 'beta'
+        subdirectory: 'ios'
