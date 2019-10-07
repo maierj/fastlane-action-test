@@ -10,6 +10,7 @@ jobs:
       uses: maierj/fastlane-action@master
       with:
         lane: 'beta'
+        options: '{ "option1": "value1", "option2": "value2" }'
     - name: Fastlane step (subdirectory)
       uses: maierj/fastlane-action@master
       with:
