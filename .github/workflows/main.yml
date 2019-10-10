@@ -11,8 +11,14 @@ jobs:
       with:
         lane: 'beta'
         options: '{ "option1": "value1", "option2": "value2" }'
+      env:
+        ENV_VARIABLE_1: VALUE_1
+        ENV_VARIABLE_2: VALUE_2
     - name: Fastlane step (subdirectory)
       uses: maierj/fastlane-action@master
       with:
         lane: 'beta'
         subdirectory: 'ios'
+      env:
+        ENV_VARIABLE_1: VALUE_1
+        ENV_VARIABLE_2: VALUE_2

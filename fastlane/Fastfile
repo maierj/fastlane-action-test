@@ -24,5 +24,7 @@ platform :ios do
     options.each do |key, value|
       puts "#{key}:#{value}"
     end
+    puts "Environment variables:"
+    sh("env")
   end
 end
