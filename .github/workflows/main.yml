@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Fastlane step (root directory)
-      uses: maierj/fastlane-action@master
+      uses: maierj/fastlane-action@gemfile-usage
       with:
         lane: 'beta'
         options: '{ "option1": "value1", "option2": "value2" }'
@@ -18,7 +18,7 @@ jobs:
         ENV_VARIABLE_1: VALUE_1
         ENV_VARIABLE_2: VALUE_2
     - name: Fastlane step (subdirectory)
-      uses: maierj/fastlane-action@master
+      uses: maierj/fastlane-action@gemfile-usage
       with:
         lane: 'beta'
         subdirectory: 'ios'
