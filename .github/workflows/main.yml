@@ -1,3 +1,4 @@
+name: 'Fastlane action test'
 on: [push, repository_dispatch]
 
 jobs:
