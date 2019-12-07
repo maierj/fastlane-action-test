@@ -26,3 +26,12 @@ jobs:
       env:
         ENV_VARIABLE_1: VALUE_1
         ENV_VARIABLE_2: VALUE_2
+    - name: Fastlane step (subdirectory + bundle-install-path)
+      uses: maierj/fastlane-action@development
+      with:
+        lane: 'beta'
+        subdirectory: 'ios'
+        bundle-install-path: 'vendor/bundle'
+      env:
+        ENV_VARIABLE_1: VALUE_1
+        ENV_VARIABLE_2: VALUE_2
