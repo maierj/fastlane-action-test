@@ -3,6 +3,7 @@ on: [push, repository_dispatch]
 
 jobs:
   test_job:
+    continue-on-error: true
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
