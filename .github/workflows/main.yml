@@ -8,7 +8,8 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-16.04, ubuntu-18.04, macOS-latest]
-        ruby-version: [2.5.8, 2.6.6, 2.7.2, 3.0.0]
+        ruby-version: [2.5.9, 2.6.8, 2.7.4, 3.0.2]
+        verbose: [true, false]
     name: A job to test the GitHub fastlane action
     steps:
     - uses: actions/checkout@v2
@@ -20,6 +21,7 @@ jobs:
       with:
         lane: 'beta'
         options: '{ "option1": "value1", "option2": "value2" }'
+        verbose: "${{ matrix.verbose}}"
       env:
         ENV_VARIABLE_1: VALUE_1
         ENV_VARIABLE_2: VALUE_2
@@ -28,6 +30,7 @@ jobs:
       with:
         lane: 'beta'
         subdirectory: 'ios'
+        verbose: "${{ matrix.verbose}}"
       env:
         ENV_VARIABLE_1: VALUE_1
         ENV_VARIABLE_2: VALUE_2
@@ -37,6 +40,7 @@ jobs:
         lane: 'beta'
         subdirectory: 'ios'
         bundle-install-path: 'vendor/bundle'
+        verbose: "${{ matrix.verbose}}"
       env:
         ENV_VARIABLE_1: VALUE_1
         ENV_VARIABLE_2: VALUE_2
