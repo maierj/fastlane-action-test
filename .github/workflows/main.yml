@@ -12,10 +12,11 @@ jobs:
         verbose: [true, false]
     name: A job to test the GitHub fastlane action
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: "${{ matrix.ruby-version }}"
+        bundler-cache: true
     - name: Fastlane step (root directory)
       uses: maierj/fastlane-action@development
       with:
@@ -27,19 +28,18 @@ jobs:
         ENV_VARIABLE_2: VALUE_2
     - name: Fastlane step (subdirectory)
       uses: maierj/fastlane-action@development
+      working-directory: "ios"
       with:
         lane: 'beta'
-        subdirectory: 'ios'
         verbose: "${{ matrix.verbose}}"
       env:
         ENV_VARIABLE_1: VALUE_1
         ENV_VARIABLE_2: VALUE_2
     - name: Fastlane step (subdirectory + bundle-install-path)
       uses: maierj/fastlane-action@development
+      working-directory: "ios"
       with:
         lane: 'beta'
-        subdirectory: 'ios'
-        bundle-install-path: 'vendor/bundle'
         verbose: "${{ matrix.verbose}}"
       env:
         ENV_VARIABLE_1: VALUE_1
