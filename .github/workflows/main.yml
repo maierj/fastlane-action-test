@@ -7,7 +7,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, macOS-latest]
+        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, macOS-10.15, macOS-11, macOS-12, windows-2019, windows-2022]
         ruby-version: [2.5.9, 2.6.8, 2.7.4, 3.0.2]
         verbose: [true, false]
     name: Test 1
@@ -22,7 +22,7 @@ jobs:
       with:
         lane: 'beta'
         options: '{ "option1": "value1", "option2": "value2" }'
-        verbose: "${{ matrix.verbose}}"
+        verbose: "${{ matrix.verbose }}"
       env:
         ENV_VARIABLE_1: VALUE_1
         ENV_VARIABLE_2: VALUE_2
@@ -46,7 +46,7 @@ jobs:
         uses: maierj/fastlane-action@development
         with:
           lane: 'betaSubdirectory'
-          verbose: "${{ matrix.verbose}}"
+          verbose: "${{ matrix.verbose }}"
           subdirectory: "ios"
         env:
           ENV_VARIABLE_1: VALUE_1
