@@ -51,28 +51,3 @@ jobs:
         env:
           ENV_VARIABLE_1: VALUE_1
           ENV_VARIABLE_2: VALUE_2
-  fail-test:
-    continue-on-error: true
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-18.04]
-        ruby-version: [3.0.2]
-        verbose: [true, false]
-    name: Test 3
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "${{ matrix.ruby-version }}"
-          bundler-cache: true
-          working-directory: "no-gemfile"
-      - name: Fastlane step
-        uses: maierj/fastlane-action@development
-        with:
-          lane: 'betaSubdirectory'
-          verbose: "${{ matrix.verbose }}"
-          subdirectory: "no-gemfile"
-        env:
-          ENV_VARIABLE_1: VALUE_1
-          ENV_VARIABLE_2: VALUE_2
