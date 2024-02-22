@@ -7,8 +7,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04, macOS-10.15, macOS-11, macOS-12, windows-2019, windows-2022]
-        ruby-version: [2.5.9, 2.6.8, 2.7.4, 3.0.2]
+        os: [ubuntu-22.04, macOS-12, windows-2022]
+        ruby-version: [2.7.4, 3.0.2]
         verbose: [true, false]
     name: Test 1
     steps:
